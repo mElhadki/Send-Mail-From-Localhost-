@@ -50,54 +50,8 @@ ob_start();
         </div>
     </nav>
 
-    <?php
+<?php include 'controller/Commande.php'; ?>
 
-if(isset($_POST['Commander'])){
-
-    
-    if(!empty($_POST["Produit"] && $_POST['Nom'] && $_POST['tel'] && $_POST['Ville'])){
-
-
-        $message="";
-        //echo "<h3>You Have Select Product</h3>";
-
-        //foreach($_POST["Produit"] as $Produit){
-
-            //echo '<p>' .$Produit. '</p>';
-        //}
-
-        $to = "elhadkimariem3@gmail.com"; // this is your Email address
-        $from = "elhadkimariem3@gmail.com"; // this is the sender's Email address
-        $Nom = $_POST['Nom'];
-        $tel= $_POST['tel'];
-        $Ville= $_POST['Ville'];
-        $Commande = implode("\n\n", $_POST['Produit']);
-        $subject = "Form submission";
-        $subject2 = "Copy of your form submission";
-        $message = "Client: " .$Nom . " Son Numéro : " . $tel . " sa ville: " . $Ville. " a commandé:" . "\n\n" .$Commande;
-        $message2 = "Here is a copy of your Commande " . $Nom . "\n\n Votre Commande: \n\n " .$Commande;
-
-        $headers = "From:" . $from;
-        $headers2 = "From:" . $to;
-        mail($to,$subject,$message,$headers);
-        mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-
-        header('location: view/ThankYou.php');
-        
-           //echo '<p>' .$_POST["Nom"]. '</p>';
-            //echo '<p>' .$_POST["tel"]. '</p>';
-            //echo '<p>' .$_POST["Ville"]. '</p>';
-    }
-
-    else {
-
-        $Error="Please Select at least One Product and fill all the blinks";
-    }
-}
-
-?>
-
- 
     <!-- Form Commande -->
     <div class="container contact-form">
         <form action="" method="post">
@@ -154,7 +108,6 @@ if(isset($_POST['Commander'])){
             </div>
             </form>
     </div>
-
 
 
 

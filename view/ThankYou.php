@@ -12,6 +12,7 @@
     <!-- link local CSS -->
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/ThankYou.css">
+    <script type="text/javascript" src="Js/PageEvent.js"></script>
 </head>
 
 <body>
@@ -47,24 +48,7 @@
             </div>
         </div>
     </nav>
-
-<script>
-
-const pageLink = document.querySelectorAll(".pageLink"),
-        pages = document.querySelectorAll(".page");
-      for (let i = 0; i < pageLink.length; i++) {
-        pageLink[i].addEventListener("click", function(e) {
-          e.preventDefault();
-          pages.forEach(function(page, number) {
-            page.classList.remove("active");
-            if (number == i) {
-              page.classList.add("active");
-            }
-          });
-        });
-      }
-</script>
-
+ 
 <div class="page active">
 
     
